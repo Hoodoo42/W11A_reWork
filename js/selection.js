@@ -1,17 +1,17 @@
-let grabJson = Cookies.get(`selection`);
-let convertJson = JSON.parse(grabJson);
+let grabString = Cookies.get(`selection`);
+let chosenPlanet = JSON.parse(grabString);
 
-let chosenPlanet = convertJson;
+// let chosenPlanet = convertJson;
 
 let setMessage = document.getElementById(`message`);
 
-if (chosenPlanet === `chooseJupiter`) {
+if (chosenPlanet[`name`] === `Jupiter`) {
   setMessage[`innerHTML`] = `<h3>You chose Jupiter! Jupiter Has 67 Moons!`;
-} else if ((chosenPlanet = `chooseSaturn`)) {
+} else if (chosenPlanet[`name`] === `Saturn`) {
   setMessage[
     `innerHTML`
   ] = `<h3>You chose Saturn! A year on Saturn is more than 29 Earth years!`;
-} else if ((chosenPlanet = `choosePluto`)) {
+} else if (chosenPlanet[`name`] === `Pluto`) {
   setMessage[
     `innerHTML`
   ] = `<h3>You chose Pluto! Pluto has more water than earth!`;
